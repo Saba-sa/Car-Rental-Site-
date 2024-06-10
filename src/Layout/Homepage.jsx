@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import AppStoreBanner from "./components/AppStoreBanner/AppStoreBanner";
 
-import Footer from "./components/Footer/Footer";
+import About from "../components/About/About";
+import CarList from "../components/CarList/CarList";
+import Contact from "../components/Contact/Contact";
+import Hero from "../components/Hero/Hero";
+import Services from "../components/Services/Services";
+import Testimonial from "../components/Testimonial/Testimonial";
+import Work from "../components/Work/Work";
 
-const App = () => {
-  // dark mode start
+const Homepage = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -35,13 +37,16 @@ const App = () => {
     AOS.refresh();
   }, []);
   return (
-    <div className="bg-white dark:bg-black dark:text-white text-black overflow-x-hidden">
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Outlet />
-      <AppStoreBanner />
-      <Footer />
-    </div>
+    <>
+      <Hero theme={theme} />
+      <Work />
+      <About />
+      <CarList />
+      <Services />
+      <Testimonial />
+      <Contact />
+    </>
   );
 };
 
-export default App;
+export default Homepage;

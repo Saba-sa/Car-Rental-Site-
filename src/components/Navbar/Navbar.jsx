@@ -1,30 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
-
-export const Navlinks = [
-  {
-    id: 1,
-    name: "HOME",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "CARS",
-    link: "/#cars",
-  },
-  {
-    id: 1,
-    name: "ABOUT",
-    link: "/#about",
-  },
-  {
-    id: 1,
-    name: "BOOKING",
-    link: "/#booking",
-  },
-];
+import { Link } from "react-router-dom";
+import { Navbarlinks } from "../../data/Navbaritem";
 const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -45,14 +24,14 @@ const Navbar = ({ theme, setTheme }) => {
           </div>
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
-              {Navlinks.map(({ id, name, link }) => (
+              {Navbarlinks.map(({ id, name, link }) => (
                 <li key={id} className="py-4">
-                  <a
-                    href={link}
+                  <Link
+                    to={link}
                     className=" text-lg font-medium  hover:text-orange-700 py-2 hover:border-b-2 hover:border-orange-700 transition-colors duration-500  "
                   >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
               {/* DarkMode feature implement */}

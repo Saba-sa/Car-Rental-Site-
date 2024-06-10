@@ -100,6 +100,9 @@ const Testimonial = () => {
                     <div className="w-full sm:w-[40%] text-left">
                       <p>{testimonial.description}</p>
                       <p className=" font-bold my-2">{testimonial.name}</p>
+                      <p className="text-orange-700 font-semibold">
+                        Ceo <span className="text-black">at</span> ABC companey
+                      </p>
                       <div className="w-9 flex">
                         {fullStars.concat(hollowStar)}
                       </div>

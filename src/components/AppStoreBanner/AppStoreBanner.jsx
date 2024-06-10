@@ -1,6 +1,6 @@
 import AppStoreImg from "../../assets/website/app_store.png";
 import PlayStoreImg from "../../assets/website/play_store.png";
-import pattern from "../../assets/website/pattern.jpeg";
+import pattern from "../../assets/website/pattern.jpg";
 import view1 from "../../assets/testimonial/view1.png";
 import view2 from "../../assets/testimonial/car.png";
 const bannerImg = {

@@ -3,6 +3,7 @@ import carPng from "../../assets/car.png";
 import yellowCar from "../../assets/banner-car.png";
 import banner from "../../assets/banner-car2.png";
 import AOS from "aos";
+import { Link } from "react-router-dom";
 
 const Hero = ({ theme }) => {
   useEffect(() => {
@@ -66,8 +67,10 @@ const Hero = ({ theme }) => {
               data-aos-duration="1500"
               data-aos-once="false"
             >
-              <img src={banner} alt="banner" />
-              <p className="">View Gallery</p>
+              <Link to="/product">
+                <img src={banner} alt="banner" />
+                <p className="">View Gallery</p>
+              </Link>
             </div>
           </div>
         </div>
