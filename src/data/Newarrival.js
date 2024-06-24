@@ -52,7 +52,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car2,
-    aosDelay: "500",
+    aosDelay: "100",
   },
   {
     id: "carGHI789",
@@ -75,7 +75,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car3,
-    aosDelay: "1000",
+    aosDelay: "300",
   },
   {
     id: "carJKL012",
@@ -98,7 +98,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car4,
-    aosDelay: "1500",
+    aosDelay: "400",
   },
   {
     id: "carMNO345",
@@ -121,7 +121,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 7,
     image: car5,
-    aosDelay: "2000",
+    aosDelay: "500",
   },
   {
     id: "carPQR678",
@@ -144,7 +144,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car6,
-    aosDelay: "2500",
+    aosDelay: "600",
   },
   {
     id: "carSTU901",
@@ -167,7 +167,7 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car7,
-    aosDelay: "3000",
+    aosDelay: "700",
   },
   {
     id: "carVWX234",
@@ -190,6 +190,6 @@ export const NewArrivalCars = [
     year: 2024,
     seatingCapacity: 5,
     image: car8,
-    aosDelay: "3500",
+    aosDelay: "10",
   },
 ];

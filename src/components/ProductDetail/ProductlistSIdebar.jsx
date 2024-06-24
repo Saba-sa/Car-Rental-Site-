@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Product from "./Products";
 import { carList } from "../../data/Carlist";
 import { NewArrivalCars } from "../../data/Newarrival";
@@ -7,14 +7,23 @@ const ProductlistSIdebar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [data, setData] = useState(carList);
   const [currentSelectedMenu, setcurrentSelectedMenu] = useState("sale");
+  const [currentSelectedData, setcurrentSelectedData] = useState(carList);
 
+  useEffect(() => {
+    if (currentSelectedMenu === "sale") {
+      setcurrentSelectedData([...carList]);
+    } else if (currentSelectedMenu === "new") {
+      setcurrentSelectedData([...NewArrivalCars]);
+    } else if (currentSelectedMenu === "deal") {
+      setcurrentSelectedData([...SpecialDeal]);
+    }
+  }, [currentSelectedMenu]);
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
   const handleSelectionSort = (e) => {
-    console.log("e value is ", e.target.value);
-    let temp = [...data];
+    let temp = [...currentSelectedData];
     if (e.target.value === "high-to-low") {
       temp.sort((a, b) => b.price - a.price);
     } else if (e.target.value === "price-low-to-high") {
@@ -41,8 +50,7 @@ const ProductlistSIdebar = () => {
     setData(temp);
   };
   const handleMinMax = (e, action) => {
-    console.log("eee", e.target.value);
-    let temp = [...data];
+    let temp = [...currentSelectedData];
     let t;
     if (action === "min") {
       if (e.target.value === "Min") {
@@ -60,7 +68,7 @@ const ProductlistSIdebar = () => {
     setData(t);
   };
   const handleAvailability = (e) => {
-    let temp = [...carList];
+    let temp = [...currentSelectedData];
     let t;
     if (e.target.value === "in-stock") {
       t = temp.filter((i) => i.availability === true);
@@ -69,6 +77,8 @@ const ProductlistSIdebar = () => {
       e.target.value === "pre-order"
     ) {
       t = temp.filter((i) => i.availability !== true);
+    } else if (e.target.value === "all") {
+      t = [...currentSelectedData];
     }
     setData(t);
   };
@@ -285,7 +295,7 @@ const ProductlistSIdebar = () => {
               <div className="flex items-center mb-5 gap-1">
                 <div className="relative w-full">
                   <select
-                    id="FROM"
+                    id="MIN"
                     className="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white dark:text-white dark:bg-gray-900"
                     onChange={(e) => handleMinMax(e, "min")}
                   >
@@ -320,7 +330,7 @@ const ProductlistSIdebar = () => {
                 </p>
                 <div className="relative w-full">
                   <select
-                    id="FROM"
+                    id="MAX"
                     className="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white dark:text-white dark:bg-gray-900"
                     onChange={(e) => handleMinMax(e, "max")}
                   >
@@ -464,6 +474,13 @@ const ProductlistSIdebar = () => {
                           className="mt-2 h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white  dark:bg-gray-900 dark:text-white"
                           onChange={(e) => handleAvailability(e, "sort")}
                         >
+                          <option
+                            className=" dark:text-white"
+                            value="all"
+                            selected
+                          >
+                            All
+                          </option>
                           <option value="in-stock" className=" dark:text-white">
                             In Stock
                           </option>

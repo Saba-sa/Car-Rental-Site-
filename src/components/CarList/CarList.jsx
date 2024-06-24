@@ -1,6 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { carList } from "../../data/Carlist";
+import { useNavigate } from "react-router-dom";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -22,6 +23,7 @@ const responsive = {
 };
 
 const CarList = () => {
+  const navigate = useNavigate();
   return (
     <section className=" dark:bg-black bg-white w-[90%] m-auto my-12  duration-300">
       <div className="max-width slider">
@@ -63,6 +65,7 @@ const CarList = () => {
                 data-aos="fade-up"
                 className="space-y-3 border-2 border-gray-300 hover:border-orange-700 p-3 rounded-xl relative group "
                 key={index}
+                onClick={() => navigate(`product/${item.id}`)}
               >
                 <div className="w-full h-[120px]">
                   <img
@@ -87,6 +90,7 @@ const CarList = () => {
       <button
         data-aos="fade-up"
         className="button-outline text-orange-700 border-orange-700 hover:bg-orange-500 hover:text-white mt-2 md:mt-8"
+        onClick={() => navigate(`about`)}
       >
         Get Started
       </button>

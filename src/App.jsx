@@ -29,10 +29,10 @@ const App = () => {
 
   React.useEffect(() => {
     AOS.init({
-      offset: 100,
+      offset: 10,
       duration: 800,
       easing: "ease-in-sine",
-      delay: 100,
+      delay: 10,
     });
     AOS.refresh();
   }, []);
