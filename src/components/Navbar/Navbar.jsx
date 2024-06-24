@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Navbarlinks } from "../../data/Navbaritem";
 const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,12 +26,13 @@ const Navbar = ({ theme, setTheme }) => {
             <ul className="flex items-center gap-8">
               {Navbarlinks.map(({ id, name, link }) => (
                 <li key={id} className="py-4">
-                  <Link
+                  <NavLink
                     to={link}
-                    className=" text-lg font-medium  hover:text-orange-700 py-2 hover:border-b-2 hover:border-orange-700 transition-colors duration-500  "
+                    className={`text-lg font-medium  hover:text-orange-700 py-2 hover:border-b-2 hover:border-orange-700 transition-colors duration-500  "
+                    ${(navClass) => (navClass.isActive ? "active" : "")}`}
                   >
                     {name}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
               {/* DarkMode feature implement */}

@@ -15,7 +15,7 @@ export const NewArrivalCars = [
     availability: true,
     discount: "6% off",
     carBrandName: "Toyota",
-    colors: ["white", "black", "silver"],
+    colors: ["white", "black", "blue"],
     type: "Sedan",
     rating: [4.4, 4.2, 4.6],
     reviews: [
@@ -84,7 +84,7 @@ export const NewArrivalCars = [
     availability: true,
     discount: "8% off",
     carBrandName: "Chevrolet",
-    colors: ["white", "silver", "red"],
+    colors: ["white", "blue", "red"],
     type: "SUV",
     rating: [4.0, 3.8, 4.2],
     reviews: [
@@ -107,7 +107,7 @@ export const NewArrivalCars = [
     availability: true,
     discount: "6% off",
     carBrandName: "Ford",
-    colors: ["black", "silver", "blue"],
+    colors: ["black", "blue", "blue"],
     type: "SUV",
     rating: [4.3, 4.1, 4.5],
     reviews: [
@@ -176,7 +176,7 @@ export const NewArrivalCars = [
     availability: true,
     discount: "6% off",
     carBrandName: "Subaru",
-    colors: ["red", "black", "silver"],
+    colors: ["red", "black", "blue"],
     type: "SUV",
     rating: [4.3, 4.0, 4.5],
     reviews: [

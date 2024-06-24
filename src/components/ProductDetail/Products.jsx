@@ -8,7 +8,7 @@ const Product = ({ item = {} }) => {
       className="bg-white dark:bg-gray-900 dark:text-white cursor-pointer rounded-sm"
       data-aos="fade-up"
       data-aos-delay={item.aosDelay}
-      onClick={() => navigate(`product/${item?.id}`)}
+      onClick={() => navigate(`/product/${item?.id}`)}
     >
       <div className="group aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 dark:bg-gray-900">
         <img

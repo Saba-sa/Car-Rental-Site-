@@ -77,20 +77,28 @@ const Testimonial = () => {
             >
               {testimonialData.map((testimonial, index) => {
                 const fullStars = Array(testimonial.rate).fill(
-                  <img src={fullStarImage} alt="Full Star" />
+                  <img
+                    src={fullStarImage}
+                    alt="Full Star"
+                    key={`fullStar-${testimonial.name}-${index}`} // Unique key
+                  />
                 );
                 const hollowStar = Array(5 - testimonial.rate).fill(
-                  <img src={hollowStarImage} alt="Hollow Star" />
+                  <img
+                    src={hollowStarImage}
+                    alt="Hollow Star"
+                    key={`hollowStar-${testimonial.name}-${index}`} // Unique key
+                  />
                 );
 
                 return (
                   <div
-                    key={index}
+                    key={`${testimonial.name}-${index}`} // Unique key
                     data-aos="fade-up"
                     data-aos-delay={testimonial.aosDelay}
-                    className=" text-center group space-y-3 sm:space-y-6 p-4 sm:py-12 duration-300  rounded-lg flex flex-col sm:flex-row items-center justify-evenly"
+                    className="text-center group space-y-3 sm:space-y-6 p-4 sm:py-12 duration-300 rounded-lg flex flex-col sm:flex-row items-center justify-evenly"
                   >
-                    <div className="grid place-items-center w-[50%] sm:w-[25%] ">
+                    <div className="grid place-items-center w-[50%] sm:w-[25%]">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -99,9 +107,9 @@ const Testimonial = () => {
                     </div>
                     <div className="w-full sm:w-[40%] text-left">
                       <p>{testimonial.description}</p>
-                      <p className=" font-bold my-2">{testimonial.name}</p>
+                      <p className="font-bold my-2">{testimonial.name}</p>
                       <p className="text-orange-700 font-semibold">
-                        Ceo <span className="text-black">at</span> ABC companey
+                        CEO <span className="text-black">at</span> ABC company
                       </p>
                       <div className="w-9 flex">
                         {fullStars.concat(hollowStar)}

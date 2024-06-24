@@ -58,7 +58,6 @@ const CarList = () => {
           renderDotsOutside={false}
         >
           {carList?.map((item, index) => {
-            console.log(item);
             return (
               <div
                 data-aos="fade-up"

@@ -1,18 +1,36 @@
 import { useParams } from "react-router-dom";
-
+import { AlldataItem } from "../../data/Alldata";
 const Singleproduct = () => {
   const { id } = useParams();
-  console.log("id :>> ", id);
+  const dataItem = AlldataItem?.filter((i) => i.id === id);
+  const {
+    image,
+    carBrandName,
+    seatingCapacity,
+    transmission,
+    type,
+    year,
+    availability,
+    mileage,
+    name,
+    price,
+    discount,
+    colors,
+    fuelType,
+    engine,
+    reviews,
+  } = dataItem[0];
+  const orignalPrice = (price * discount.split(" ")[0].split("%")[0]) / 100;
+  console.log(dataItem[0]);
   return (
     <div>
-      hellooooo{" "}
-      {/* <div className="font-sans bg-white">
+      <div className="font-sans bg-white">
         <div className="p-6 lg:max-w-7xl max-w-4xl mx-auto">
           <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-6">
             <div className="lg:col-span-3 w-full lg:sticky top-0 text-center">
               <div className="px-4 py-10 rounded-xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative">
                 <img
-                  src="https://readymadeui.com/images/laptop5.webp"
+                  src={image}
                   alt="Product"
                   className="w-4/5 rounded object-cover"
                 />
@@ -35,28 +53,28 @@ const Singleproduct = () => {
               <div className="mt-6 flex flex-wrap justify-center gap-6 mx-auto">
                 <div className="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                   <img
-                    src="https://readymadeui.com/images/laptop2.webp"
+                    src={image}
                     alt="Product2"
                     className="w-24 cursor-pointer"
                   />
                 </div>
                 <div className="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                   <img
-                    src="https://readymadeui.com/images/laptop3.webp"
+                    src={image}
                     alt="Product2"
                     className="w-24 cursor-pointer"
                   />
                 </div>
                 <div className="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                   <img
-                    src="https://readymadeui.com/images/laptop4.webp"
+                    src={image}
                     alt="Product2"
                     className="w-24 cursor-pointer"
                   />
                 </div>
                 <div className="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                   <img
-                    src="https://readymadeui.com/images/laptop5.webp"
+                    src={image}
                     alt="Product2"
                     className="w-24 cursor-pointer"
                   />
@@ -66,12 +84,12 @@ const Singleproduct = () => {
 
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-extrabold text-[#333]">
-                Acer Aspire Pro 12 | Laptop
+                {name} | {carBrandName}
               </h2>
               <div className="flex flex-wrap gap-4 mt-4">
-                <p className="text-[#333] text-3xl font-bold">$1200</p>
+                <p className="text-[#333] text-3xl font-bold">PKR{price}</p>
                 <p className="text-gray-400 text-lg">
-                  <strike>$1500</strike>{" "}
+                  <strike>PKR{parseInt(orignalPrice) + parseInt(price)}</strike>{" "}
                   <span className="text-sm ml-1">Tax included</span>
                 </p>
               </div>
@@ -125,22 +143,20 @@ const Singleproduct = () => {
                   Choose a Color
                 </h3>
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <button
-                    type="button"
-                    className="w-10 h-10 bg-black border-2 border-white hover:border-gray-800 rounded-full shrink-0"
-                  />
-                  <button
-                    type="button"
-                    className="w-10 h-10 bg-gray-300 border-2 border-white hover:border-gray-800 rounded-full shrink-0"
-                  />
-                  <button
-                    type="button"
-                    className="w-10 h-10 bg-gray-100 border-2 border-white hover:border-gray-800 rounded-full shrink-0"
-                  />
-                  <button
-                    type="button"
-                    className="w-10 h-10 bg-blue-400 border-2 border-white hover:border-gray-800 rounded-full shrink-0"
-                  />
+                  {colors.map((color, i) => {
+                    console.log(color);
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`w-10 h-10 bg-${color}-800 ${
+                          color === "black" && "bg-black"
+                        } ${
+                          color === "white" && "border-black"
+                        } border-2 border-white hover:border-gray-800 rounded-full shrink-0`}
+                      />
+                    );
+                  })}
                 </div>
               </div>
 
@@ -155,7 +171,7 @@ const Singleproduct = () => {
                   type="button"
                   className="min-w-[200px] px-4 py-2.5 border border-[#333] bg-transparent hover:bg-gray-50 text-[#333] text-sm font-semibold rounded"
                 >
-                  Add to cart
+                  Book now
                 </button>
               </div>
             </div>
@@ -167,44 +183,46 @@ const Singleproduct = () => {
             </h3>
             <ul className="mt-6 space-y-6 text-[#333]">
               <li className="text-sm">
-                TYPE <span className="ml-4 float-right">LAPTOP</span>
+                Brand Name{" "}
+                <span className="ml-4 float-right">{carBrandName}</span>
               </li>
               <li className="text-sm">
-                RAM <span className="ml-4 float-right">16 BG</span>
+                ENGINE <span className="ml-4 float-right">{engine}</span>
               </li>
               <li className="text-sm">
-                SSD <span className="ml-4 float-right">1000 BG</span>
+                FUEL TYPE <span className="ml-4 float-right">{fuelType}</span>
               </li>
               <li className="text-sm">
-                PROCESSOR TYPE{" "}
-                <span className="ml-4 float-right">INTEL CORE I7-12700H</span>
+                MILEAGE
+                <span className="ml-4 float-right">{mileage}</span>
               </li>
               <li className="text-sm">
-                PROCESSOR SPEED{" "}
-                <span className="ml-4 float-right">2.3 - 4.7 GHz</span>
+                TYPE
+                <span className="ml-4 float-right">{type}</span>
               </li>
               <li className="text-sm">
-                DISPLAY SIZE INCH <span className="ml-4 float-right">16.0</span>
+                {"seating Capacity".toUpperCase()}
+                <span className="ml-4 float-right">{seatingCapacity}</span>
               </li>
               <li className="text-sm">
-                DISPLAY SIZE SM{" "}
-                <span className="ml-4 float-right">40.64 cm</span>
+                {"transmission".toUpperCase()}
+                <span className="ml-4 float-right">{transmission}</span>
               </li>
               <li className="text-sm">
-                DISPLAY TYPE{" "}
-                <span className="ml-4 float-right">
-                  OLED, TOUCHSCREEN, 120 Hz
-                </span>
+                YEAR
+                <span className="ml-4 float-right">{year}</span>
               </li>
               <li className="text-sm">
-                DISPLAY RESOLUTION{" "}
-                <span className="ml-4 float-right">2880x1620</span>
+                {"availability".toUpperCase()}
+                <span className="ml-4 float-right">{availability}</span>
               </li>
             </ul>
           </div>
 
           <div className="mt-16 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-6">
-            <h3 className="text-lg font-bold text-[#333]">Reviews(10)</h3>
+            <h3 className="text-lg font-bold text-[#333]">
+              Reviews({reviews.length})
+            </h3>
             <div className="grid md:grid-cols-2 gap-12 mt-6">
               <div>
                 <div className="space-y-3">
@@ -360,7 +378,7 @@ const Singleproduct = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

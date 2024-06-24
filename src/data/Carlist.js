@@ -37,7 +37,7 @@ export const carList = [
     availability: false,
     discount: "10% off",
     carBrandName: "KIA",
-    colors: ["red", "silver", "gray"],
+    colors: ["red", "blue", "gray"],
     type: "SUV",
     rating: [4.3, 4.1, 4.6],
     reviews: [
@@ -60,7 +60,7 @@ export const carList = [
     availability: true,
     discount: "3% off",
     carBrandName: "Toyota",
-    colors: ["white", "silver", "black"],
+    colors: ["white", "blue", "black"],
     type: "Sedan",
     rating: [4.2, 4.0, 4.5],
     reviews: [
@@ -129,7 +129,7 @@ export const carList = [
     availability: true,
     discount: "10% off",
     carBrandName: "Mercedes-Benz",
-    colors: ["black", "silver", "white"],
+    colors: ["black", "blue", "white"],
     type: "Sedan",
     rating: [4.7, 4.6, 4.8],
     reviews: [

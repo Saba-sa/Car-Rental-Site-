@@ -5,10 +5,10 @@ const ConnectSection = () => {
   return (
     <div className="grid sm:grid-cols-2 py-4 px-8 gap-16 ">
       <div className="w-full">
-        <h1 className="text-3xl font-extrabold">Let's Talk</h1>
+        <h1 className="text-3xl font-extrabold">Let`s Talk</h1>
         <p className="text-sm text-gray-400 mt-3 dark:text-white">
           Have some big idea or brand to develop and need help? Then reach out
-          we'd love to hear about your project and provide help.
+          we`d love to hear about your project and provide help.
         </p>
         <div className="mt-12">
           <h2 className="text-lg font-extrabold">Email</h2>

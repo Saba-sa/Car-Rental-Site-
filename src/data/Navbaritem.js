@@ -10,12 +10,12 @@ export const Navbarlinks = [
     link: "/Product",
   },
   {
-    id: 1,
+    id: 3,
     name: "ABOUT",
     link: "/about",
   },
   {
-    id: 1,
+    id: 4,
     name: "BOOKING",
     link: "/booking",
   },
