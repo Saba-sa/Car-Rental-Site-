@@ -8,6 +8,7 @@ import Aboutpage from "./Layout/Aboutpage.jsx";
 import Bookingpage from "./Layout/Bookingpage.jsx";
 import Productpage from "./Layout/Productpage.jsx";
 import Singleproduct from "./components/ProductDetail/Singleproduct.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router}>

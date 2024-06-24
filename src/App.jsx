@@ -4,11 +4,13 @@ import "aos/dist/aos.css";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import AppStoreBanner from "./components/AppStoreBanner/AppStoreBanner";
+import useScrollToTop from "./components/ScrolltoTop/useScrollToTop";
 
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
-  // dark mode start
+  useScrollToTop();
+
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );

@@ -5,23 +5,24 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const FooterLinks = [
   {
     title: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     title: "About",
-    link: "/#about",
+    link: "/about",
   },
   {
     title: "Contact",
-    link: "/#contact",
+    link: "/booking",
   },
   {
-    title: "Blog",
-    link: "/#blog",
+    title: "Product",
+    link: "/Product",
   },
 ];
 const Footer = () => {
@@ -73,8 +74,10 @@ const Footer = () => {
                       className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-orange-700 space-x-1 text-gray-500 dark:text-gray-200"
                       key={index}
                     >
-                      <span>&#11162;</span>
-                      <span>{link.title}</span>
+                      <Link to={`${link.link}`}>
+                        <span>&#11162;</span>
+                        <span>{link.title}</span>
+                      </Link>
                     </li>
                   ))}
                 </ul>

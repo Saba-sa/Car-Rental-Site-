@@ -149,11 +149,8 @@ const Singleproduct = () => {
                       <button
                         key={i}
                         type="button"
-                        className={`w-10 h-10 bg-${color}-800 ${
-                          color === "black" && "bg-black"
-                        } ${
-                          color === "white" && "border-black"
-                        } border-2 border-white hover:border-gray-800 rounded-full shrink-0`}
+                        style={{ backgroundColor: color }}
+                        className={`w-10 h-10  border-2  border-black hover:border-gray-400 rounded-full shrink-0`}
                       />
                     );
                   })}
@@ -165,13 +162,17 @@ const Singleproduct = () => {
                   type="button"
                   className="min-w-[200px] px-4 py-3 bg-[#333] hover:bg-[#111] text-white text-sm font-semibold rounded"
                 >
-                  Buy now
+                  <a href="tel:03555555555" className="text-decoration-none">
+                    Buy now
+                  </a>
                 </button>
                 <button
                   type="button"
                   className="min-w-[200px] px-4 py-2.5 border border-[#333] bg-transparent hover:bg-gray-50 text-[#333] text-sm font-semibold rounded"
                 >
-                  Book now
+                  <a href="tel:03555555555" className="text-decoration-none">
+                    Book now
+                  </a>
                 </button>
               </div>
             </div>
