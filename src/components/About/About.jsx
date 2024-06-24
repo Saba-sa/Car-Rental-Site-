@@ -18,7 +18,7 @@ const About = () => {
             <h1 className="text-5xl font-semibold ">
               Feel the best experience with our rental deals
             </h1>
-            <div className="w-[20%] bg-orange-700 h-[4px] my-4 rounded-full"></div>
+            <div className="w-[20%] bg-primary h-[4px] my-4 rounded-full"></div>
             {/* <p data-aos="fade-up" className="leading-8 tracking-wide"> */}
             <div className="space-y-5 pt-4 pb-6">
               <div>

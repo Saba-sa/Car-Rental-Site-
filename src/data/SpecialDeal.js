@@ -118,6 +118,6 @@ export const SpecialDeal = [
     year: 2024,
     seatingCapacity: 5,
     image: car1,
-    aosDelay: "3500",
+    aosDelay: "500",
   },
 ];

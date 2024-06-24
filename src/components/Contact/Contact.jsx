@@ -19,7 +19,7 @@ const Contact = () => {
             <div className="sm:grid sm:place-items-center">
               <a
                 href="#"
-                className="inline-block font-semibold py-2 px-6 bg-orange-700 text-white hover:bg-orange-700/80 duration-200 tracking-widest uppercase "
+                className="inline-block font-semibold py-2 px-6 bg-primary text-white hover:bg-primary/80 duration-200 tracking-widest uppercase "
               >
                 Contact
               </a>

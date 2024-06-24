@@ -25,6 +25,31 @@ const FooterLinks = [
     link: "/Product",
   },
 ];
+const FooterSocialLinks = [
+  {
+    title: "Linkedin",
+  },
+  {
+    title: "Instagram",
+  },
+  {
+    title: "Whatsapp",
+  },
+  {
+    title: "Facebook",
+  },
+];
+const FooterLocationLinks = [
+  {
+    title: "ABC Road rss city",
+  },
+  {
+    title: "YUD Road rss city",
+  },
+  {
+    title: "WDD Road rss city",
+  },
+];
 const Footer = () => {
   return (
     <div className="bg-gray-200 pt-14 dark:bg-dark  rounded-t-3xl">
@@ -46,18 +71,18 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-3 mt-3">
               <FaMobileAlt />
-              <p>+923 55556789</p>
+              <p>+923 5555555555555</p>
             </div>
             {/* Social Handle */}
             <div className="flex items-center gap-3 mt-6">
               <a href="#">
-                <FaInstagram className="text-3xl hover:text-orange-700 duration-300" />
+                <FaInstagram className="text-3xl hover:text-primary duration-300" />
               </a>
               <a href="#">
-                <FaFacebook className="text-3xl hover:text-orange-700 duration-300" />
+                <FaFacebook className="text-3xl hover:text-primary duration-300" />
               </a>
               <a href="#">
-                <FaLinkedin className="text-3xl hover:text-orange-700 duration-300" />
+                <FaLinkedin className="text-3xl hover:text-primary duration-300" />
               </a>
             </div>
           </div>
@@ -71,7 +96,7 @@ const Footer = () => {
                 <ul className={`flex flex-col gap-3`}>
                   {FooterLinks.map((link, index) => (
                     <li
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-orange-700 space-x-1 text-gray-500 dark:text-gray-200"
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-500 dark:text-gray-200"
                       key={index}
                     >
                       <Link to={`${link.link}`}>
@@ -89,9 +114,9 @@ const Footer = () => {
                   Links
                 </h1>
                 <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link, index) => (
+                  {FooterSocialLinks.map((link, index) => (
                     <li
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-orange-700 space-x-1 text-gray-500 dark:text-gray-200"
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-500 dark:text-gray-200"
                       key={index}
                     >
                       <span>&#11162;</span>
@@ -108,7 +133,7 @@ const Footer = () => {
                 </h1>
                 {/* <ul className="list-disc list-inside"> */}
                 <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link, index) => (
+                  {FooterLocationLinks.map((link, index) => (
                     <li
                       className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-500 dark:text-gray-200"
                       key={index}

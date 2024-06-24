@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import carPng from "../../assets/car.png";
 import yellowCar from "../../assets/banner-car.png";
 import banner from "../../assets/banner-car2.png";
@@ -31,7 +31,7 @@ const Hero = ({ theme }) => {
             <div className="space-y-5 order-2 sm:order-1 sm:pr-32 pt-12 lg:w-[60%]">
               <p
                 data-aos="fade-up"
-                className="text-orange-700 text-2xl font-serif"
+                className="text-primary text-2xl font-serif"
               >
                 Road Trip Ready{" "}
               </p>
@@ -56,7 +56,7 @@ const Hero = ({ theme }) => {
                 onClick={() => {
                   AOS.refreshHard();
                 }}
-                className="rounded-md bg-orange-700 hover:bg-orange-800 transition duration-500 py-2 px-6 text-white"
+                className="rounded-md bg-primary hover:bg-orange-800 transition duration-500 py-2 px-6 text-white"
               >
                 Get Started
               </button>

@@ -60,7 +60,7 @@ const Work = () => {
               </li>
               <li>
                 <div className="flex-start flex items-center pt-2 md:block md:pt-0">
-                  <div className="-ml-[5px] mr-3 h-[79px] w-[79px] rounded-full  dark:bg-orange-800 md:-mt-[35px] md:ml-0 md:mr-0 flex items-center justify-center bg-orange-700 ">
+                  <div className="-ml-[5px] mr-3 h-[79px] w-[79px] rounded-full  dark:bg-primary md:-mt-[35px] md:ml-0 md:mr-0 flex items-center justify-center bg-primary ">
                     <>
                       <svg
                         width="40px"

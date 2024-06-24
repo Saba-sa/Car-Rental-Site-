@@ -4,7 +4,7 @@ const Faq = () => {
     <div className="dark:bg-black dark:text-white duration-300 ">
       <div className="container min-h-[620px] my-8 ">
         <div className="flex flex-col items-center" data-aos="fade-down">
-          <h2 className="font-bold text-5xl mt-5  text-orange-700">FAQ</h2>
+          <h2 className="font-bold text-5xl mt-5  text-primary">FAQ</h2>
           <p className="text-neutral-500 text-xl mt-3 dark:text-white">
             Frequenty asked questions
           </p>

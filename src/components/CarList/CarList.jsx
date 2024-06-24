@@ -63,7 +63,7 @@ const CarList = () => {
             return (
               <div
                 data-aos="fade-up"
-                className="space-y-3 border-2 border-gray-300 hover:border-orange-700 p-3 rounded-xl relative group "
+                className="space-y-3 border-2 border-gray-300 hover:border-primary p-3 rounded-xl relative group "
                 key={index}
                 onClick={() => navigate(`product/${item.id}`)}
               >
@@ -75,7 +75,7 @@ const CarList = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <h1 className="text-orange-700 font-semibold">{item.name}</h1>
+                  <h1 className="text-primary font-semibold">{item.name}</h1>
                   <div className="flex justify-between items-center text-xl font-semibold">
                     <p>$ {item.price}</p>
                     <a href="#">Details</a>
@@ -89,7 +89,7 @@ const CarList = () => {
 
       <button
         data-aos="fade-up"
-        className="button-outline text-orange-700 border-orange-700 hover:bg-orange-500 hover:text-white mt-2 md:mt-8"
+        className="button-outline text-primary border-primary hover:bg-orange-500 hover:text-white mt-2 md:mt-8"
         onClick={() => navigate(`about`)}
       >
         Get Started

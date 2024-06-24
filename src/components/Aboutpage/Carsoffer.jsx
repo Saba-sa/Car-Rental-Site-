@@ -42,10 +42,10 @@ const Carsoffer = () => {
         <>
           <div className="flex items-center flex-col mb-4 " data-aos="fade-up">
             <h1 className="my-2 text-2xl">
-              What <span className="text-orange-700">type of car</span> are you
+              What <span className="text-primary">type of car</span> are you
               looking for?
             </h1>
-            <div className=" w-[10%] bg-orange-700 h-[4px] rounded-full mb-4 "></div>
+            <div className=" w-[10%] bg-primary h-[4px] rounded-full mb-4 "></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
             {/* <div className="flex items-center justify-between gap-4 "> */}
@@ -63,9 +63,7 @@ const Carsoffer = () => {
                     className="w-[50%] sm:w-full h-full fill-current text-black dark:text-white"
                   />
                 </div>
-                <h1 className="text-orange-700 font-semibold">
-                  {item.heading}
-                </h1>
+                <h1 className="text-primary font-semibold">{item.heading}</h1>
                 <p>{item.text}</p>
               </div>
             ))}
@@ -76,7 +74,7 @@ const Carsoffer = () => {
           data-aos="fade-down"
           data-aos-delay={3000}
         >
-          <h1 className="my-2 text-2xl text-orange-700 dark:text-white font-semibold">
+          <h1 className="my-2 text-2xl text-primary dark:text-white font-semibold">
             Why Rent A Car With Rently?
           </h1>
           <p className="text-md mt-4 md:mt-6 dark:text-white">

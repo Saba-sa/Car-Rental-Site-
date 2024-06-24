@@ -108,7 +108,7 @@ const Testimonial = () => {
                     <div className="w-full sm:w-[40%] text-left">
                       <p>{testimonial.description}</p>
                       <p className="font-bold my-2">{testimonial.name}</p>
-                      <p className="text-orange-700 font-semibold">
+                      <p className="text-primary font-semibold">
                         CEO <span className="text-black">at</span> ABC company
                       </p>
                       <div className="w-9 flex">

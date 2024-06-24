@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Navbarlinks } from "../../data/Navbaritem";
 const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = ({ theme, setTheme }) => {
         <div className="flex justify-between items-center">
           <div>
             <span className="text-3xl  font-bold font-serif">
-              Car <span className="text-orange-700">Rental</span>
+              Car <span className="text-primary">Rental</span>
             </span>
           </div>
           <nav className="hidden md:block">
@@ -28,7 +28,7 @@ const Navbar = ({ theme, setTheme }) => {
                 <li key={id} className="py-4">
                   <NavLink
                     to={link}
-                    className={`text-lg font-medium  hover:text-orange-700 py-2 hover:border-b-2 hover:border-orange-700 transition-colors duration-500  "
+                    className={`text-lg font-medium  hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500  "
                     ${(navClass) => (navClass.isActive ? "active" : "")}`}
                   >
                     {name}

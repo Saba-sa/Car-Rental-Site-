@@ -14,10 +14,9 @@ export default {
         spin: "spin 1s linear infinite",
       },
       colors: {
-        primary: "#ffc727",
+        primary: "#c32c01",
         secondary: {
-          100: "#E2E2D5",
-          200: "#888883",
+          100: "#f3f4f6",
         },
         dark: "#111111",
       },

@@ -52,17 +52,21 @@ const ProductlistSIdebar = () => {
   const handleMinMax = (e, action) => {
     let temp = [...currentSelectedData];
     let t;
+    let minimum = 0;
+    let maximun = 88888880;
     if (action === "min") {
       if (e.target.value === "Min") {
         t = temp;
       } else {
-        t = temp.filter((i) => i.price >= e.target.value);
+        minimum = e.target.value;
+        t = temp.filter((i) => i.price >= minimum && i.price <= maximun);
       }
     } else if (action === "max") {
       if (e.target.value === "Max") {
         t = temp;
       } else {
-        t = temp.filter((i) => i.price <= e.target.value);
+        maximun = e.target.value;
+        t = temp.filter((i) => i.price <= maximun && i.price >= minimum);
       }
     }
     setData(t);
@@ -401,7 +405,7 @@ const ProductlistSIdebar = () => {
                   />
                 </svg>
               </div>
-              <button className="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-orange-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-orange-700 hover:shadow-orange-200  ">
+              <button className="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-orange-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-primary hover:shadow-orange-200  ">
                 <svg
                   width="17"
                   height="16"
