@@ -1,8 +1,14 @@
 import { FaUserCircle } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Navbarlinks } from "../../data/Navbaritem";
+import { useEffect } from "react";
 
-const ResponsiveMenu = ({ showMenu }) => {
+const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
+  const location = useLocation();
+  useEffect(() => {
+    setShowMenu(false);
+  }, [location]);
+
   return (
     <div
       className={`${

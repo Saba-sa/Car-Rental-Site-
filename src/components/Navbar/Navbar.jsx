@@ -80,7 +80,7 @@ const Navbar = ({ theme, setTheme }) => {
           </div>
         </div>
       </div>
-      <ResponsiveMenu showMenu={showMenu} />
+      <ResponsiveMenu showMenu={showMenu} setShowMenu={setShowMenu} />
     </div>
   );
 };
