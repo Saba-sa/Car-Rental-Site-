@@ -1,4 +1,3 @@
-import React from "react";
 import CarPng from "../../assets/car1.png";
 
 const About = () => {
@@ -15,7 +14,7 @@ const About = () => {
           </div>
           <div>
             <p className="text-gray-500 font-semibold">BEST SERVICES</p>
-            <h1 className="text-5xl font-semibold ">
+            <h1 className="text-xl md:text-3xl font-semibold ">
               Feel the best experience with our rental deals
             </h1>
             <div className="w-[20%] bg-primary h-[4px] my-4 rounded-full"></div>
@@ -23,7 +22,7 @@ const About = () => {
             <div className="space-y-5 pt-4 pb-6">
               <div>
                 <div className="flex items-center gap-2">
-                  <div className="w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
+                  <div className="w-[25%] md:w-[15%] lg:w-[10%] xl:w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
                     <svg
                       width="40"
                       height="40"
@@ -53,7 +52,7 @@ const About = () => {
                   </div>
                   <div />
                   <div className="flex-grow">
-                    <h3>Deals for every budget</h3>
+                    <h3 className="font-semibold">Deals for every budget</h3>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Aperiam quod hic nam itaque! Suscipit voluptate, amet
@@ -62,7 +61,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
+                  <div className="w-[25%] md:w-[15%] lg:w-[10%] xl:w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
                     <svg
                       width="40"
                       height="40"
@@ -81,7 +80,7 @@ const About = () => {
                   </div>
                   <div />
                   <div className="flex-grow">
-                    <h3>Deals for every budget</h3>
+                    <h3 className="font-semibold">Deals for every budget</h3>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Aperiam quod hic nam itaque! Suscipit voluptate, amet
@@ -90,7 +89,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
+                  <div className="w-[25%] md:w-[15%] lg:w-[10%] xl:w-[7%] mr-4 bg-gray-300  rounded-md border-2 border-white flex items-center justify-center p-2">
                     <svg
                       width="40"
                       height="40"
@@ -128,7 +127,7 @@ const About = () => {
                   </div>
                   <div />
                   <div className="flex-grow">
-                    <h3>Deals for every budget</h3>
+                    <h3 className="font-semibold">Deals for every budget</h3>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Aperiam quod hic nam itaque! Suscipit voluptate, amet

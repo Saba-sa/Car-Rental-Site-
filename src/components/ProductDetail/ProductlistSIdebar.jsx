@@ -5,25 +5,44 @@ import { NewArrivalCars } from "../../data/Newarrival";
 import { SpecialDeal } from "../../data/SpecialDeal";
 const ProductlistSIdebar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [showFilters, setshowFilters] = useState(false);
   const [data, setData] = useState(carList);
   const [currentSelectedMenu, setcurrentSelectedMenu] = useState("sale");
   const [currentSelectedData, setcurrentSelectedData] = useState(carList);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(900000);
 
   useEffect(() => {
+    let dataToUpdate = [];
+
     if (currentSelectedMenu === "sale") {
-      setcurrentSelectedData([...carList]);
+      dataToUpdate = [...carList];
     } else if (currentSelectedMenu === "new") {
-      setcurrentSelectedData([...NewArrivalCars]);
+      dataToUpdate = [...NewArrivalCars];
     } else if (currentSelectedMenu === "deal") {
-      setcurrentSelectedData([...SpecialDeal]);
+      dataToUpdate = [...SpecialDeal];
     }
-  }, [currentSelectedMenu]);
+
+    const filteredData = dataToUpdate.filter((item) => {
+      const price = parseInt(item.price);
+      return price >= min && price <= max;
+    });
+    setcurrentSelectedData(dataToUpdate);
+    setData(filteredData);
+    console.log(
+      "data to update",
+      dataToUpdate,
+      "selected data",
+      currentSelectedData
+    );
+  }, [currentSelectedMenu, min, max]);
+
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
   const handleSelectionSort = (e) => {
-    let temp = [...currentSelectedData];
+    let temp = [...data];
     if (e.target.value === "high-to-low") {
       temp.sort((a, b) => b.price - a.price);
     } else if (e.target.value === "price-low-to-high") {
@@ -50,29 +69,21 @@ const ProductlistSIdebar = () => {
     setData(temp);
   };
   const handleMinMax = (e, action) => {
-    let temp = [...currentSelectedData];
-    let t;
-    let minimum = 0;
-    let maximun = 88888880;
     if (action === "min") {
-      if (e.target.value === "Min") {
-        t = temp;
-      } else {
-        minimum = e.target.value;
-        t = temp.filter((i) => i.price >= minimum && i.price <= maximun);
-      }
-    } else if (action === "max") {
-      if (e.target.value === "Max") {
-        t = temp;
-      } else {
-        maximun = e.target.value;
-        t = temp.filter((i) => i.price <= maximun && i.price >= minimum);
-      }
+      let tempmin = e.target.value === "Min" ? 0 : parseInt(e.target.value);
+      setMin(tempmin);
+    } else {
+      let tempmax = e.target.value === "Max" ? 7000 : parseInt(e.target.value);
+      setMax(tempmax);
     }
-    setData(t);
   };
   const handleAvailability = (e) => {
-    let temp = [...currentSelectedData];
+    let temp = [];
+    if (data.length > 0) {
+      temp = [...data];
+    } else {
+      temp = [...currentSelectedData];
+    }
     let t;
     if (e.target.value === "in-stock") {
       t = temp.filter((i) => i.availability === true);
@@ -99,6 +110,7 @@ const ProductlistSIdebar = () => {
               onClick={() => {
                 setData(carList);
                 setcurrentSelectedMenu("sale");
+                window.scrollTo(100, 100);
               }}
             >
               <svg
@@ -141,6 +153,7 @@ const ProductlistSIdebar = () => {
               onClick={() => {
                 setData(NewArrivalCars);
                 setcurrentSelectedMenu("new");
+                window.scrollTo(100, 100);
               }}
             >
               <svg
@@ -184,6 +197,7 @@ const ProductlistSIdebar = () => {
               onClick={() => {
                 setData(SpecialDeal);
                 setcurrentSelectedMenu("deal");
+                window.scrollTo(100, 100);
               }}
             >
               <svg
@@ -288,13 +302,16 @@ const ProductlistSIdebar = () => {
           <path d="M0 1H1216" stroke="#E5E7EB" />
         </svg>
         <div className="grid grid-cols-12">
-          <div
+          <h2 className="inline cursor-pointer  md:d-none font-medium text-base leading-7 text-black mb-5 dark:text-white" onClick={()=>setshowFilters(!showFilters)}>
+            Filters
+          </h2>
+         {showFilters && <div
             className="col-span-12 md:col-span-3 w-full max-md:max-w-md max-md:mx-auto"
             data-aos="fade-right"
           >
             <div className="box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm dark:bg-gray-900 dark:text-white dark:border-white">
               <h6 className="font-medium text-base leading-7 text-black mb-5 dark:text-white">
-                Your Workspace
+                MIMMAX
               </h6>
               <div className="flex items-center mb-5 gap-1">
                 <div className="relative w-full">
@@ -481,7 +498,7 @@ const ProductlistSIdebar = () => {
                           <option
                             className=" dark:text-white"
                             value="all"
-                            selected
+                            selected={true}
                           >
                             All
                           </option>
@@ -561,7 +578,7 @@ const ProductlistSIdebar = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>}
           <div className="col-span-12 md:col-span-9">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-4 lg:py-0">
               <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3  xl:gap-x-8 xl:gap-y-8">

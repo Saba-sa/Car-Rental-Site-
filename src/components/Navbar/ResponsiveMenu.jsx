@@ -1,9 +1,8 @@
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Navbarlinks } from "../../data/Navbaritem";
 
 const ResponsiveMenu = ({ showMenu }) => {
-  console.log("showMenu", showMenu);
   return (
     <div
       className={`${
@@ -22,9 +21,13 @@ const ResponsiveMenu = ({ showMenu }) => {
           <ul className="space-y-4 text-xl">
             {Navbarlinks.map((data, index) => (
               <li key={index}>
-                <Link to={data.link} className="mb-5 inline-block">
+                <NavLink
+                  to={data.link}
+                  className={`mb-5 inline-block" ${(navClass) =>
+                    navClass.isActive ? "active" : ""}`}
+                >
                   {data.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

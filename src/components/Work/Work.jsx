@@ -3,10 +3,10 @@ const Work = () => {
     <div>
       <>
         <div className="dark:bg-dark bg-slate-100 sm:min-h-[600px] sm:grid sm:place-items-center duration-300">
-          <div className="container">
+          <div className="container pt-4 sm:pt-0">
             <div className="text-center my-4 md:mb-24">
               <p className="text-gray-500 font-semibold">HOW IT WORKS</p>
-              <h1 className="text-5xl font-semibold ">
+              <h1 className="text-xl md:text-3xl font-semibold ">
                 Rentgo following 3 working Steps
               </h1>
             </div>
