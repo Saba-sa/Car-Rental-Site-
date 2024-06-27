@@ -3,8 +3,8 @@ import Map from "../Map/Map";
 import Formsection from "./Formsection";
 const ConnectSection = () => {
   return (
-    <div className="p-4 grid sm:grid-cols-2  gap-16 ">
-      <div className="container ">
+    <div className="p-4  ">
+      <div className="container md:grid md:grid-cols-2 md:w-full  gap-16">
         <div className="w-full">
           <h1 className="text-3xl font-extrabold">Let`s Talk</h1>
           <p className="text-sm text-gray-400 mt-3 dark:text-white">
